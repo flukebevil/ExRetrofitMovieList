@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aaa"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.fluke.fuckermovie_2.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:background="@android:drawable/ic_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/btn_back"/>
+            <ImageView
+                android:id="@+id/mv_poster"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="4"
+                android:padding="15dp" />
+
+            <TextView
+                android:id="@+id/tv_ecname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Name"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="tv_detail" />
+
+            <TextView
+                android:id="@+id/tv_releadedate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="ReleaseDate"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

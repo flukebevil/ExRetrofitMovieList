@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/sunny_blue_sky_background_vector_538313"
     tools:context="com.example.fluke.fuckermovie_2.MainActivity">
 
     <LinearLayout
         android:padding="10dp"
-        android:background="#AAAAAA"
         android:id="@+id/Search"
         android:layout_width="match_parent"
         android:layout_height="100dp">
