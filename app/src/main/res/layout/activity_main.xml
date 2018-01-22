@@ -4,35 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/sunny_blue_sky_background_vector_538313"
-    tools:context="com.example.fluke.fuckermovie_2.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.example.fluke.fuckermovie2.MainActivity">
 
     <LinearLayout
-        android:padding="10dp"
         android:id="@+id/Search"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:padding="10dp">
+
         <EditText
             android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:singleLine="true"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp" />
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+
         <Button
-            android:text="Search!!"
-            android:layout_gravity="center"
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:text="@string/search" />
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </FrameLayout>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
