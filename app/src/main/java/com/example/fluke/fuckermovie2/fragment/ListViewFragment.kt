@@ -3,22 +3,21 @@ package com.example.fluke.fuckermovie2.fragment
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.fluke.fuckermovie2.adapter.DetailAdapter
-import com.example.fluke.fuckermovie2.Contactor
+import com.example.fluke.fuckermovie2.Contractor
 import com.example.fluke.fuckermovie2.MainActivity
 import com.example.fluke.fuckermovie2.R
 import com.example.fluke.fuckermovie2.model.Movie
-import com.example.fluke.fuckermovie2.precenter.MoviePrecenter
+import com.example.fluke.fuckermovie2.precenter.MoviePresenter
 import kotlinx.android.synthetic.main.fragment_view.*
 
-class ListViewFragment : Fragment(), Contactor.view {
+class ListViewFragment : Fragment(), Contractor.View {
     lateinit var linear: LinearLayoutManager
     var detailAdapter: DetailAdapter? = null
-    lateinit var prescenter: Contactor.Precenter
+    lateinit var prescenter: MoviePresenter
 
     companion object {
         fun newInstance(key: String): ListViewFragment {
@@ -32,8 +31,8 @@ class ListViewFragment : Fragment(), Contactor.view {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        prescenter = MoviePrecenter()
-        prescenter.testPresenter(arguments.getString(MainActivity.FUCKER_KEY),this)
+        prescenter = MoviePresenter(this)
+        prescenter.testPresenter(arguments.getString(MainActivity.FUCKER_KEY))
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -50,7 +49,7 @@ class ListViewFragment : Fragment(), Contactor.view {
     }
 
     override fun fragmentData(arr: ArrayList<Movie>?) {
-        Log.e("LOGGER", arr.toString())
+//        Log.e("LOGGER", arr.toString())
         detailAdapter?.setItems(arr)
         detailAdapter?.notifyDataSetChanged()
     }

@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         val FUCKER_KEY = "S_KEY"
         val PICK_LINK = "https://image.tmdb.org/t/p/w500"
+        val POSTER_VID = "https://i.ytimg.com/vi/"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

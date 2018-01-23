@@ -4,5 +4,6 @@ class BaseUrl {
 
     companion object {
         val baseUrl = "http://api.themoviedb.org"
+        val baseYouUrl = "https://www.googleapis.com/youtube/v3/"
     }
 }

@@ -11,10 +11,10 @@ class WTFManager {
 
     companion object Factory {
         var serviceWTF: BaseService? = null
-        fun create(): BaseService? {
+        fun create(baseurl: String): BaseService? {
             serviceWTF = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl(BaseUrl.baseUrl)
+                    .baseUrl(baseurl)
                     .build().create(BaseService::class.java)
             return serviceWTF as BaseService?
         }

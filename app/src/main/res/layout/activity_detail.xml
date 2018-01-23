@@ -30,8 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_weight="4"
-                android:padding="15dp"
-                android:contentDescription="@string/movieposter" />
+                android:contentDescription="@string/movieposter"
+                android:padding="15dp" />
 
             <TextView
                 android:id="@+id/tv_ecname"
@@ -57,9 +57,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="right"
                 android:text="@string/releasedate"
-                android:textSize="20sp" />
+                android:textSize="10sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fucktube_recy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
