@@ -32,5 +32,6 @@ interface Contractor {
         fun callDataWtf(key: String?, callback: OnFinishedListener)
         fun callVidData(key: String?, callback: OnVidCallBackListener)
     }
+
 }
 

@@ -26,7 +26,7 @@ class MoviePresenter(view: Contractor.View? = null) :
     override fun dateFormat(date: String?): String {
         val s = date?.split("-")?.toTypedArray()
         Log.e("dateformat", s?.get(0).toString())
-        return "วันที่ ${s?.get(2)} เดือน " + getMonth(s?.get(1)) + " ปี ${s?.get(0)}"
+        return "วันที่ ${s?.get(2)} เดือน " + getMonth(s?.get(1)) + " พ.ศ. ${s?.get(0)?.toInt()?.plus(543)}"
     }
 
     override fun testPresenter(key: String?) {
