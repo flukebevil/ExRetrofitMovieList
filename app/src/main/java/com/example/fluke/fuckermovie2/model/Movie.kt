@@ -43,3 +43,6 @@ data class Movie(@SerializedName("vote_average") val vote_average: String? = nul
         }
     }
 }
+
+@Parcel
+data class MovieList(@SerializedName("results") var results: ArrayList<Movie>? = null)
