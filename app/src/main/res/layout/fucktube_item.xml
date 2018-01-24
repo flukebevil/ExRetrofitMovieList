@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="225dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
-    <LinearLayout
-        android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="210dp"
+    android:padding="5dp"
+    android:layout_height="140dp"
+    android:orientation="vertical">
+    <RelativeLayout
         android:background="@color/fuckingdark"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <FrameLayout
+        <ImageView
+            android:id="@+id/iv_youtube"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="UselessParent">
+            android:padding="5dp"
+            android:layout_height="140dp"
+            android:contentDescription="@string/movieposter" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_youtube"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transpanRedColor70persent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/omgzooparwhite" />
+    </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/iv_youtube"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:contentDescription="@string/movieposter" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_marginTop="90dp"
-                android:id="@+id/tv_youtube"
-                android:background="@color/transpanRedColor70persent"
-                android:singleLine="true"
-                android:gravity="center"
-                android:textColor="@color/omgzooparwhite"
-                android:layout_width="match_parent"
-                android:layout_height="25dp" />
-
-        </FrameLayout>
-
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

@@ -11,15 +11,18 @@ class MainActivity : AppCompatActivity() {
     var viewFragment: ListViewFragment = ListViewFragment()
 
     companion object {
-        val FUCKER_KEY = "S_KEY"
-        val PICK_LINK = "https://image.tmdb.org/t/p/w500"
-        val POSTER_VID = "https://i.ytimg.com/vi/"
+        const val FUCKER_KEY = "S_KEY"
+        const val PICK_LINK = "https://image.tmdb.org/t/p/w500"
+        const val POSTER_VID = "https://i.ytimg.com/vi/"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance("a")).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance("")).commit()
+        btn_pop.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance("")).commit()
+        }
         btn_search.setOnClickListener {
             search = et_search.text.toString()
             val bd: Bundle = Bundle()

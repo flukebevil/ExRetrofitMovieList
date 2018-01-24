@@ -7,7 +7,7 @@
     android:background="#aaa"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="com.example.fluke.fuckermovie2.DetailActivity">
+    tools:context="com.example.fluke.fuckermovie2.moviedetail.DetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,7 +59,8 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="@string/releasedate"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="RtlHardcoded,SmallSp" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/fucktube_recy"

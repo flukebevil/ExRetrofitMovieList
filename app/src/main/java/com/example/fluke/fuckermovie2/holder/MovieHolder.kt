@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import com.bumptech.glide.Glide
-import com.example.fluke.fuckermovie2.DetailActivity
+import com.example.fluke.fuckermovie2.moviedetail.DetailActivity
 import com.example.fluke.fuckermovie2.MainActivity
 import com.example.fluke.fuckermovie2.model.Movie
 import kotlinx.android.synthetic.main.muuvee_item.view.*
@@ -31,7 +31,6 @@ class MovieHolder(private val view: View) : RecyclerView.ViewHolder(view) {
                     .setMessage("คุณต้องการเข้าชมรายฃะเอียดใช่ปะ")
                     .setPositiveButton(android.R.string.yes) { dialog, which ->
                         val s = Intent(view.context, DetailActivity::class.java)
-                        val p: Parcelable = Parcels.wrap(movieData)
                         s.putExtra(SHOWDETAIL_KEY, Parcels.wrap(movieData))
                         view.context.startActivity(s)
                     }

@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.fluke.fuckermovie2.DetailActivity"></activity>
+        <activity android:name="com.example.fluke.fuckermovie2.moviedetail.DetailActivity"/>
     </application>
 
 </manifest>

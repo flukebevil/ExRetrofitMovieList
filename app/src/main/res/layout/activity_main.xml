@@ -23,14 +23,23 @@
             android:singleLine="true"
             android:inputType="text"
             tools:ignore="LabelFor" />
-
+        <Button
+            android:id="@+id/btn_pop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/cardview_shadow_end_color"
+            android:text="@string/popular" />
         <Button
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorAccent"
-            android:text="@string/search" />
+            android:background="@color/cardview_dark_background"
+            android:text="@string/search"
+            />
+
+
     </LinearLayout>
 
     <FrameLayout

@@ -32,7 +32,7 @@ class ListViewFragment : Fragment(), Contractor.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         prescenter = MoviePresenter(this)
-        prescenter.testPresenter(arguments.getString(MainActivity.FUCKER_KEY))
+        prescenter.callDownData(arguments.getString(MainActivity.FUCKER_KEY))
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
