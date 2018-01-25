@@ -12,31 +12,23 @@ import retrofit2.Response
 class InterActies : InterActor.ActData {
 
     override fun callPopular(callback: InterActor.OnFinishedListener) {
-        WTFManager.Factory.create(BaseUrl.baseUrl)?.popular()?.enqueue(object : Callback<MovieList>{
-            override fun onFailure(call: Call<MovieList>?, t: Throwable?) {
-
-            }
+        WTFManager.Factory.create(BaseUrl.baseUrl)?.popular()?.enqueue(object : Callback<MovieList> {
+            override fun onFailure(call: Call<MovieList>?, t: Throwable?) {}
 
             override fun onResponse(call: Call<MovieList>?, response: Response<MovieList>?) {
-                Log.e("nanungHee" , response?.body().toString())
+                Log.e("nanungHee", response?.body().toString())
                 callback.onSuccess(response?.body()?.results)
             }
-
         })
-
     }
 
     override fun callDataWtf(key: String?, callback: InterActor.OnFinishedListener) {
         WTFManager.Factory.create(BaseUrl.baseUrl)?.search(key
                 ?: "")?.enqueue(object : Callback<MovieList> {
-            override fun onFailure(call: Call<MovieList>?, t: Throwable?) {
-            }
+            override fun onFailure(call: Call<MovieList>?, t: Throwable?) {}
 
             override fun onResponse(call: Call<MovieList>?, response: Response<MovieList>?) {
-                if (response != null) {
-                    // TODO callback to view
-                    callback.onSuccess(response.body()?.results)
-                }
+                response?.apply { callback.onSuccess(this.body()?.results) }
             }
         })
     }

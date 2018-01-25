@@ -15,41 +15,38 @@ import com.example.fluke.fuckermovie2.precenter.MoviePresenter
 import kotlinx.android.synthetic.main.fragment_view.*
 
 class ListViewFragment : Fragment(), Contractor.View {
-    lateinit var linear: LinearLayoutManager
-    var detailAdapter: DetailAdapter? = null
-    lateinit var prescenter: MoviePresenter
+
+    private var detailAdapter: DetailAdapter? = null
+    private var presenter: MoviePresenter? = null
+
+    init {
+        detailAdapter = DetailAdapter(listOf())
+    }
 
     companion object {
-        fun newInstance(key: String): ListViewFragment {
-            val fragment: ListViewFragment = ListViewFragment()
-            val bd: Bundle = Bundle()
-            bd.putString(MainActivity.FUCKER_KEY, key)
-            fragment.arguments = bd
-            return fragment
+        fun newInstance(key: String = "") = ListViewFragment().apply {
+            arguments = Bundle().apply { putString(MainActivity.FUCKER_KEY, key) }
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        prescenter = MoviePresenter(this)
-        prescenter.callDownData(arguments.getString(MainActivity.FUCKER_KEY))
+        presenter = MoviePresenter(this)
+        presenter?.callDownData(arguments.getString(MainActivity.FUCKER_KEY))
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        linear = LinearLayoutManager(context)
-        detailAdapter = DetailAdapter(arrayListOf(), context)
-        view_List.layoutManager = linear
-        view_List.adapter = detailAdapter
+        viewList?.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = detailAdapter
+        }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootViw = inflater!!.inflate(R.layout.fragment_view, container, false)
-        return rootViw
-    }
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+            inflater?.inflate(R.layout.fragment_view, container, false)
 
     override fun fragmentData(arr: ArrayList<Movie>?) {
-//        Log.e("LOGGER", arr.toString())
         detailAdapter?.setItems(arr)
         detailAdapter?.notifyDataSetChanged()
     }

@@ -1,6 +1,5 @@
 package com.example.fluke.fuckermovie2.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +10,13 @@ import com.example.fluke.fuckermovie2.R;
 import com.example.fluke.fuckermovie2.model.Movie;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class DetailAdapter extends RecyclerView.Adapter {
 
-    private ArrayList<Movie> dataList;
-    private Context context;
+    private List<Movie> dataList;
 
-    public DetailAdapter(ArrayList<Movie> dataList, Context context) {
-        this.context = context;
+    public DetailAdapter(List<Movie> dataList) {
         this.dataList = dataList;
     }
 
@@ -38,7 +35,7 @@ public class DetailAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof MovieHolder) {
             MovieHolder movieHolder = (MovieHolder) holder;
-            movieHolder.onBind(dataList.get(position), context);
+            movieHolder.onBind(dataList.get(position));
         }
     }
 

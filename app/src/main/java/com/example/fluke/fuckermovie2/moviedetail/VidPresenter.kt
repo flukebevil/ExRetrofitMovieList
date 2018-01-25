@@ -3,9 +3,7 @@ package com.example.fluke.fuckermovie2.moviedetail
 import com.example.fluke.fuckermovie2.moviedetail.model.InterActies
 import com.example.fluke.fuckermovie2.moviedetail.model.YouVidData
 
-class VidPresenter(val view: Contractor.Vid?) :
-        Contractor.VidPresenter,
-        DetailActor.OnVidCallBackListener {
+class VidPresenter(val view: Contractor.Vid?) : Contractor.VidPresenter, DetailActor.OnVidCallBackListener {
 
     private val actData: DetailActor.ActData = InterActies()
 
@@ -16,5 +14,4 @@ class VidPresenter(val view: Contractor.Vid?) :
     override fun vidPresenter(key: String?) {
         actData.callVidData(key, this)
     }
-
 }
