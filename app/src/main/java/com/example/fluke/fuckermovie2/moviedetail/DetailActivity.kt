@@ -22,7 +22,6 @@ class DetailActivity : AppCompatActivity(), Vid {
     private var youtubeVidAdapter: YoutubeVidAdapter? = null
     private lateinit var vidPresenter: VidPresenter
 
-
     override fun vidView(arr: ArrayList<YouVidData>?) {
         youtubeVidAdapter?.setItems(arr)
         youtubeVidAdapter?.notifyDataSetChanged()
@@ -36,7 +35,7 @@ class DetailActivity : AppCompatActivity(), Vid {
     }
 
     private fun setup() {
-        val movie = intent.extras.get(MovieHolder.SHOWDETAIL_KEY)
+        val movie = intent.extras.get(MovieHolder.SHOW_DETAIL_KEY)
         val movies: Movie = Parcels.unwrap(movie as Parcelable?)
 
         vidPresenter = VidPresenter(this)
@@ -50,6 +49,5 @@ class DetailActivity : AppCompatActivity(), Vid {
         tv_ecname.text = movies.title
         tv_detail.text = movies.overview
         tv_releadedate.text = movies.release_date?.formatDateHunmanCanRead()
-
     }
 }

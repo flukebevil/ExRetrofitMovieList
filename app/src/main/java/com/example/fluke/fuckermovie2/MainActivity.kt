@@ -19,18 +19,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance("")).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance()).commit()
         btn_pop.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance("")).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance()).commit()
         }
         btn_search.setOnClickListener {
             search = et_search.text.toString()
-            val bd: Bundle = Bundle()
             if (search.matches("".toRegex())) {
                 Toast.makeText(this, "กรอกดิไอ่เห้", Toast.LENGTH_SHORT).show()
             } else {
-                bd.putString(FUCKER_KEY, search)
-                viewFragment.arguments = bd
+                viewFragment.arguments = Bundle().apply { putString(FUCKER_KEY, search) }
                 supportFragmentManager.beginTransaction().replace(R.id.view, ListViewFragment.newInstance(search)).commit()
             }
         }
