@@ -6,7 +6,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-
 interface BaseService {
     @GET("search/movie")
     fun search(@Query("query") query: String): Call<MovieList>
